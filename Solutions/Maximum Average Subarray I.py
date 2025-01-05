@@ -37,4 +37,4 @@ class Solution:
     
 
 s = Solution()
-print(s.findMaxAverage([8,0,1,7,8,6,5,5,6,7], 5))
+print(s.findMaxAverage(nums = [1, 12, -5, -6, 50, 3], k = 4))
