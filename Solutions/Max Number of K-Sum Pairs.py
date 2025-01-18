@@ -7,35 +7,38 @@ class Solution:
         for num in count:
             complement = k - num
             if complement in count:
-                if num == complement: 
-                    res += count[num] // 2
-                else:
+                
+                # if num == complement: 
+                #     res += count[num] // 2 * 2
+                # else:
+                # -> no need to think about num == complement
+
                     ###########################################
                     res += min(count[num], count[complement]) #
                     ###########################################
         return res//2
 ########################################################################
-class Solution:
-    def maxOperations(self, nums: list[int], k: int) -> int:
-        #############
-        nums.sort() #
-        #############
+# class Solution:
+#     def maxOperations(self, nums: list[int], k: int) -> int:
+#         #############
+#         nums.sort() #
+#         #############
         
-        left, right = 0, len(nums) - 1
-        operations = 0
+#         left, right = 0, len(nums) - 1
+#         operations = 0
 
-        while left < right:
-            total = nums[left] + nums[right]
-            if total == k:
-                operations += 1
-                left += 1
-                right -= 1
-            elif total < k:
-                left += 1
-            else:
-                right -= 1
+#         while left < right:
+#             total = nums[left] + nums[right]
+#             if total == k:
+#                 operations += 1
+#                 left += 1
+#                 right -= 1
+#             elif total < k:
+#                 left += 1
+#             else:
+#                 right -= 1
 
-        return operations
+#         return operations
 ########################################################################
 
 # NOTE:
@@ -46,5 +49,5 @@ class Solution:
 
 
 s = Solution()
-print(s.maxOperations([1,2,3,4], 5)) # >>> 2
+# print(s.maxOperations([1,2,3,4], 5)) # >>> 2
 print(s.maxOperations([3,1,3,4,3], 6)) # >>> 1
