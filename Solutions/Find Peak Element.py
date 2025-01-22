@@ -19,12 +19,12 @@ class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
         left, right = 0, len(nums)-1
         while left < right:
-            #######################
-            mid = (left+right)//2 #
-            #######################
+            mid = (left+right)//2
+
             # only look at the right
             if nums[mid] < nums[mid+1]:
                 left = mid + 1
+            # or the left
             else:
                 right = mid
         return left
