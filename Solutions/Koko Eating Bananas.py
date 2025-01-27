@@ -1,10 +1,12 @@
 class Solution:
+    ####################################################################
     def total_time_needed(self, speed: int, piles:list[int]) -> bool:
             hours = 0
             for pile in piles:
                 hours += (pile + speed - 1) // speed
             return hours 
-
+    ####################################################################
+    
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
         left = 1
         right = max(piles)
