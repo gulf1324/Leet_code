@@ -1,5 +1,5 @@
 ##########################################################################
-# Not a loop-wise algorithm
+# Not while loop-wise algorithm
 # -> more like for loop 
 class Solution:
     def compress(self, chars: list[str]) -> int:
