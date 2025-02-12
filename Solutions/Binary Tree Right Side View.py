@@ -82,7 +82,7 @@ class Solution:
         while queue:
             level_size = len(queue)
             
-            for i in range(level_size):
+            for _ in range(level_size):
                 node = queue.popleft()
                 
                 # If it's the last node in this level, add its value to the result
@@ -94,6 +94,8 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
+            
+            # last node in this level, add its value to the result
             result.append(node.val)
         
         return result
