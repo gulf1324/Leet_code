@@ -86,14 +86,15 @@ class Solution:
                 node = queue.popleft()
                 
                 # If it's the last node in this level, add its value to the result
-                if i == level_size - 1:
-                    result.append(node.val)
+                # if i == level_size - 1:
+                #     result.append(node.val)
                 
                 # Add children to the queue
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
+            result.append(node.val)
         
         return result
 ##########################################################################################################
