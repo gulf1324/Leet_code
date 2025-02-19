@@ -2,7 +2,8 @@
 ![Alt text](Reorder%20Routes%20to%20Make%20All%20Paths%20Lead%20to%20the%20City%20Zero.png "8 provinces")
 
 
-```n = 6
+``` 
+n = 6
 connections = [[0,1], [1,3], [2,3], [4,0], [4,5]]
 ```
 
