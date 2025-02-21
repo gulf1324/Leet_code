@@ -52,7 +52,6 @@ class Solution:
 # * visited ==> change to '+' once visited
 # * appending ([[node, steps]]) to a stack in every loop ==> while-for loop
 # * redundant direction check ==> for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]
-# *
 
 # Shortest path in a maze -> bfs
 class Solution:
