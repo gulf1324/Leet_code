@@ -1,16 +1,18 @@
 import heapq
 #################################################################################################################################################################
-# Wrong
-# does not prevent re-adding the same number
+# Wrong (+revised)
+# does not prevent re-adding the same number (+solved)
 class SmallestInfiniteSet:
     def __init__(self):
         self.current = 1
-        self.added_back = []
+        self.added_back = set() # "duplicate preventor"
+        self.min_heap = []      # "popSmallest indicator"
 
     def popSmallest(self) -> int:
         # if some were added, return the smallest among them
-        if self.added_back:
-            smallest = heapq.heappop(self.added_back)
+        if self.min_heap:
+            smallest = heapq.heappop(self.min_heap)
+            self.added_back.remove(smallest)
             return smallest
         # else return the current value (and as if it's popped)
         else:
@@ -21,8 +23,9 @@ class SmallestInfiniteSet:
     # only affects the result when num < self.current because:
     # popSmallest() only returns the smallest value
     def addBack(self, num: int) -> None:
-        if num < self.current:
-            heapq.heappush(self.added_back, num)
+        if num < self.current and num not in self.added_back:
+            self.added_back.add(num)
+            heapq.heappush(self.min_heap, num)
 #################################################################################################################################################################
 # Correct
 # prevents duplicate
