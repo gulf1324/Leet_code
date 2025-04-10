@@ -1,9 +1,14 @@
 Code: [N-Queens.py](../../Solutions/Top%20100%20liked/N-Queens.py)
 # Example : 
-```
-n = 4
-```
-![Alt text](N-Queens.jpg)
+>```python
+> n = 4
+> # >>> 
+>```
+> ![Alt text](N-Queens.jpg)
+---
+### Relative positions in a grid by `x +- y`
+![Alt text](N-Queens_lesson.jpg)
+
 ---
 
 ```python
