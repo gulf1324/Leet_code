@@ -1,20 +1,21 @@
 #include <iostream>
 #include <typeinfo>
 #include <vector>
+#include "../../Learn C++/LinkedList.h"
 
 using namespace std;
-
+// ## defined in header file ##
 //  * Definition for singly-linked list.
-struct ListNode {
-    int val;
-    ListNode* next;
+// struct ListNode {
+//     int val;
+//     ListNode* next;
 
-    // constructor ==> struct/class 이름과 동일해야 하며, 반환 타입을 지정하지 않음.
-    // initializer list ==> 멤버 변수를 객체가 생성되자마자 초기화하는 데 사용됨.
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
+//     // constructor ==> struct/class 이름과 동일해야 하며, 반환 타입을 지정하지 않음.
+//     // initializer list ==> 멤버 변수를 객체가 생성되자마자 초기화하는 데 사용됨.
+//     ListNode() : val(0), next(nullptr) {}
+//     ListNode(int x) : val(x), next(nullptr) {}
+//     ListNode(int x, ListNode* next) : val(x), next(next) {}
+// };
 
 class Solution {
 public:
@@ -47,24 +48,6 @@ public:
     }
 };
 //////////////////////////////////////////////////////////////////
-void printList(ListNode* head) {
-    while (head != nullptr) {
-        cout << head->val;
-        if (head->next) cout << " -> ";
-        head = head->next;
-    }
-    cout << endl;
-}
-
-// 리스트 메모리 해제 함수
-void deleteList(ListNode* head) {
-    while (head != nullptr) {
-        ListNode* temp = head;
-        head = head->next;
-        delete temp;
-    }
-}
-
 int main() {
     // 1 -> 3 -> 5
     ListNode* list1 = new ListNode(1, new ListNode(3, new ListNode(5)));
@@ -76,8 +59,9 @@ int main() {
     ListNode* merged = solution.mergeTwoLists(list1, list2);
 
     cout << "Merged list: ";
-    printList(merged);
-    deleteList(merged);
+    LinkedList LinkedList;
+    LinkedList.printList(merged);
+    LinkedList.deleteList(merged);
 
     return 0;
 }
