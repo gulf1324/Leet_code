@@ -13,7 +13,13 @@ public:
         for (int i = 0; i < s.size(); ++i) {
             lastIndex[s[i] - 'a'] = i;
         }
-        // ex) "abca"
+
+        cout << "{";
+        for (int i:lastIndex) {
+            cout << i << ", " ;
+        }
+        cout << "}" << endl;
+        // ex)  "abca"
         // lastIndex == {3, 1, 2, -1, ... ,-1}
         // ==> last index that character appreared in the string
 
